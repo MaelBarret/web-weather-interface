@@ -105,31 +105,32 @@ async function reverseGeocoding(loc){
     editTitle(city, postcode);
 };
 
-L.Control.Button = L.Control.extend({
-    options: {
-        position: 'topleft'
-      },
-      onAdd: function (map) {
-        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-        var button = L.DomUtil.create('a', 'leaflet-control-button', container);
-        container.style.backgroundImage = "./images/favicon.svg"
-        L.DomEvent.disableClickPropagation(button);
-        L.DomEvent.on(button, 'click', function(){
-            if (marker){window.localStorage.setItem("favoris", loc);}
-        });
+//Add a favorite location button to save actual location for next sessions
+// L.Control.Button = L.Control.extend({
+//     options: {
+//         position: 'topleft'
+//       },
+//       onAdd: function (map) {
+//         var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+//         var button = L.DomUtil.create('a', 'leaflet-control-button', container);
+//         container.style.backgroundImage = "./images/favicon.svg"
+//         L.DomEvent.disableClickPropagation(button);
+//         L.DomEvent.on(button, 'click', function(){
+//             if (marker){window.localStorage.setItem("favoris", loc);}
+//         });
 
-        container.title = "Localisation favorite";
-        container.onmouseover = function(){
-            container.style.backgroundColor = 'pink'; 
-          }
-          container.onmouseout = function(){
-            container.style.backgroundColor = 'white'; 
-          }
-        return container;
-    },
-    onRemove: function(map) {},
-});
-new L.Control.Button().addTo(map);
+//         container.title = "Localisation favorite";
+//         container.onmouseover = function(){
+//             container.style.backgroundColor = 'pink'; 
+//           }
+//           container.onmouseout = function(){
+//             container.style.backgroundColor = 'white'; 
+//           }
+//         return container;
+//     },
+//     onRemove: function(map) {},
+// });
+// new L.Control.Button().addTo(map);
 
 function editTitle(city, postcode){
     document.getElementById('h1').innerHTML= `Prévisions météo - ` + city + ` (` + postcode + `)`;
