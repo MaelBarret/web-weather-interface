@@ -10,7 +10,7 @@ Requirements:
 
 Hosting has to be defined to use it from multiple machines.
 
-![Alt text](./public/images/image.png)
+![Interface](./public/images/image.png)
 
-To see the working app:
+To use the application:
 [click here](https://jubilant-trout-rvw5pvjx4wqf5xj9-5500.app.github.dev/)
