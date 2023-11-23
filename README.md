@@ -13,4 +13,4 @@ Hosting has to be defined to use it from multiple machines.
 ![Interface](./public/images/image.png)
 
 To use the application:
-[click here](https://jubilant-trout-rvw5pvjx4wqf5xj9-5500.app.github.dev/)
+[click here]((https://bloom-shy-tub.glitch.me/))
