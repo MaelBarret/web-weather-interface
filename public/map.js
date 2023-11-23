@@ -9,6 +9,7 @@ const map = new L.map('map').setView([47, 1.5], 5);
 //     attribution: '© OpenStreetMap'
 // }).addTo(map); 
 
+const favorite_location = window.localStorage.getItem("favoris");
 
 // Basemap1
 var basemap1 = L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png");
@@ -25,9 +26,9 @@ L.control.layers({
   "Map 2": basemap2
 }).addTo(map);
 
-
 // Add marker on click
 let loc, accuracy;
+if (favorite_location){loc = favorite_location};
 map.on('click', function(e) {
     if (accuracy){accuracy = NaN}
     loc = e.latlng;
@@ -103,6 +104,32 @@ async function reverseGeocoding(loc){
     const postcode = Object(reverse_data.address.postcode);
     editTitle(city, postcode);
 };
+
+L.Control.Button = L.Control.extend({
+    options: {
+        position: 'topleft'
+      },
+      onAdd: function (map) {
+        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+        var button = L.DomUtil.create('a', 'leaflet-control-button', container);
+        container.style.backgroundImage = "./images/favicon.svg"
+        L.DomEvent.disableClickPropagation(button);
+        L.DomEvent.on(button, 'click', function(){
+            if (marker){window.localStorage.setItem("favoris", loc);}
+        });
+
+        container.title = "Localisation favorite";
+        container.onmouseover = function(){
+            container.style.backgroundColor = 'pink'; 
+          }
+          container.onmouseout = function(){
+            container.style.backgroundColor = 'white'; 
+          }
+        return container;
+    },
+    onRemove: function(map) {},
+});
+new L.Control.Button().addTo(map);
 
 function editTitle(city, postcode){
     document.getElementById('h1').innerHTML= `Prévisions météo - ` + city + ` (` + postcode + `)`;

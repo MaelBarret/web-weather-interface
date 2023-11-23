@@ -6,4 +6,4 @@ Working with Node.js. It require to launch the command "node index.js" directly 
 
 Hosting has to be defined to use it from multiple machines.
 
-![Alt text](./public/images/image.png)# web-weather-interface
+![Alt text](./public/images/image.png)

@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "leaflet": "^1.9.4",
+    "leaflet-geosearch": "^3.10.1",
+    "node-fetch": "^3.3.2"
+  },
+  "name": "meteo_forecast",
+  "version": "1.0.0",
+  "description": "Fetch and display meteo forecasts to the specified location as specified with a Leaflet location map",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "meteo",
+    "api",
+    "leaflet",
+    "weather",
+    "forecast"
+  ],
+  "author": "Mael Barret",
+  "license": "MIT"
+}
