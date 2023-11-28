@@ -22,8 +22,8 @@ map.addLayer(basemap1);
 
 // Add controls to the map
 L.control.layers({
-	"Map 1": basemap1,
-  "Map 2": basemap2
+	"OpenStreetMap": basemap1,
+  "Thunderforest": basemap2
 }).addTo(map);
 
 // Add marker on click
